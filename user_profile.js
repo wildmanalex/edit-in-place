@@ -1,50 +1,31 @@
 $(document).ready(function(){
 
-
-	// $('.about-input').on('click', function(){
-	// 	$('.about-input').focus(function(){
-	// 		$('.about-input').append('<input name="user-input"/>');
-	// 		$('.about-text').remove();
-	// 	})
-	// });
-
-
-
-	$('.about-text').click(function(){
-		$('about-input').focus(function(){
-			$('.about-input').append('<input name="user-input"/>');
-			$('.about-text').remove();
-		});
+	$('.name-input').hide();
+	$('.about-input').hide();
+// name code
+	$('.name-placeholder').on('click', function(){
+		$('.name-placeholder').hide();
+		$('.name-input').show();
+	});
+	$('.name-input').on('blur', function(event){
+		var userInput = $('.name-input').val()
+		console.log(userInput);
+		$('.name-placeholder').text(userInput);
+		$('.name-input').hide();
+		$('.name-placeholder').show();
+	});
+// about code
+	$('.about-placeholder').on('click', function(){
+		$('.about-placeholder').hide();
+		$('.about-input').show();
+	});
+	$('.about-input').on('blur', function(event){
+		var userInput = $('.about-input').val()
+		console.log(userInput);
+		$('.about-placeholder').text(userInput);
+		$('.about-input').hide();
+		$('.about-placeholder').show();
 	});
 
 
-	$('body').click(function(){
-		$('about-input').blur(function(){
-			alert('fdsfds');
-		});
-	});
-	//next I need to detach the input element but keep text
-
-	// $('.about-text').blur(function() {
-	// 	alert('dddddd');
-	// })
-
-
-
-
-	// $('body').click(function(){
-	// 	$('.about-input').blur();
-		
-	// })
-
-
-
-
-	// $('.about-text').click(function(){
-	// 	$('.about-input').append('<input name="user-input"/>');
-	// 		$('.about-text').remove();
-	// 		});
-	// $('.about-input').click(function(){
-	// 	$('.about-text').blur();
-	// })
 });
